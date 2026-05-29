@@ -43,6 +43,22 @@
 
 ## 4. 앱 사용성 평가 지표 대응 (학습용이성, 라벨링, 오류 정정)
 - **라벨링 & 학습용이성**: 사용자가 직관적으로 이해할 수 있는 용어([내 발자취], [위시리스트])를 채택하고, 대중적인 인스타그램의 인터페이스를 벤치마킹하여 별도의 설명서 없이 즉시 조작할 수 있도록 설계했습니다.
+## 5. 파일 구조
+
+- Archiv/
+├── Models/
+│   └── Post.swift
+├── Services/
+│   ├── PostStore.swift       ← localStore.ts 역할
+│   └── KakaoSearchService.swift
+├── Views/
+│   ├── ContentView.swift     ← App.tsx 역할
+│   ├── AuthView.swift
+│   ├── ArchiveView.swift
+│   ├── MapView.swift
+│   ├── DiscoveryView.swift
+│   └── UploadView.swift
+└── ArchivApp.swift
 - **피드백 & 오류 정정**: 
   - 탐색 탭에서 '저장' 버튼 터치 시 **햅틱 피드백(진동)**과 토스트 메시지를 제공하여 조작 상황을 명확히 인지시킵니다.
   - 검색 결과가 없거나 네트워크 연결이 끊겼을 때 예외 처리를 통해 "장소를 찾을 수 없습니다"라는 명확한 Alert 창을 띄워 시스템의 실수를 방지합니다.
